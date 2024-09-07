@@ -111,6 +111,10 @@ ul {
         font-size: 2vw;
     }
     
+    header{
+        width: 100%;
+    }
+    
     #profile img{
         width: 25vw;
         top: 14vw;
