@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    position: relative;  
+    background-color: #C8CDFA;
+}
+
+#resume{
+    width: 60vw;
+    background-color: #f0f0fe;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+header {
+    background-color: #4c58afda;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    
+}
+
+#profile img{
+    width: 18vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 160px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+}
+
+#name{
+    color: #eae9e9eb;
+    text-align: left;
+    padding-top: 50px;
+    font-size: 1.5vw;
+    justify-content: right;
+    line-height: 15px;
+}
+
+#name h1{
+    color: #020412;
+}
+
+#wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#First_column, #Second_column{
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 20px;
+}
+
+#First_column{
+    grid-column: 1;
+}
+
+#Second_column{
+    grid-column: 2;
+} 
+div {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #020412;
+}
+
+ul {
+    list-style-type: square;
+    padding: 0;
+}
+
+#skills ul li {
+    width: 80%;
+    background: #ffff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    #resume{
+        width: 90vw;
+    }
+}
