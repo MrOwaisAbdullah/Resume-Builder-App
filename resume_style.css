@@ -103,6 +103,10 @@ ul {
         padding-top: 5vw;
         font-size: 2vw;
     }
+    div {
+        margin: 10px 0;
+        padding: 5px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -114,7 +118,7 @@ ul {
     header{
         width: 100%;
     }
-    
+
     #profile img{
         width: 25vw;
         top: 14vw;
@@ -124,10 +128,5 @@ ul {
     #name{
         padding-top: 2vw;
         font-size: 2.5vw;
-    }
-
-    div {
-        margin: 10px 0;
-        padding: 5px;
     }
 }
