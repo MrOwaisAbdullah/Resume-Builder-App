@@ -4,78 +4,163 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Static Resume</title>
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="resume_style.css" />
   </head>
   <body>
+
+    <button id="toggle-btn">Generate Your Resume</button>
+
     <div id="resume">
       <header>
         <div id="profile">
           <img src="profile_pic.png" alt="Profile Picture" />
         </div>
         <div id="name">
-          <h1>Owais Abdullah</h1>
-          <p>WordPress Developer</p>
+          <h1 id="full_name">Owais Abdullah</h1>
+          <p id="job_title">WordPress Developer</p>
         </div>
       </header>
       <div id="wrapper">
         <div id="First_column">
-            <section id="personal-details">
-              <h2>Contact Details</h2>
-              <p>Email: mrowaisabdullah@gmail.com</p>
-              <p>Phone: +923262283140</p>
-              <p>Location: Karachi, Pakistan</p>
-            </section>
-            <section id="skills">
-              <h2>Skills</h2>
+          <section id="personal-details">
+            <h2>Contact Details</h2>
+            <p id="email">Email: mrowaisabdullah@gmail.com</p>
+            <p id="phone">Phone: +923262283140</p>
+            <p id="location">Location: Karachi, Pakistan</p>
+          </section>
+          <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+              <li>WordPress</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+            </ul>
+          </section>
+          <section id="education">
+            <h2>Education</h2>
+            <ul>
+              <li>
+                Intermediate in Pre Engineering - Govt. National College, 2020 -
+                2022
+              </li>
+            </ul>
+            <ul>
+              <li>Digital Marketing Course - Aamir Ahmer Academy, 2022</li>
+            </ul>
+          </section>
+        </div>
+        <div id="Second_column">
+          <section id="about_me">
+            <h2>About Me</h2>
+            <p id="aboutMe">
+              Highly skilled and motivated Web Developer with expertise in
+              WordPress and Shopify seeking a challenging position to utilize my
+              technical skills and creativity to develop visually stunning and
+              functional websites.
+            </p>
+          </section>
+          <section id="work-experience">
+            <h2>Work Experience</h2>
+            <div class="job">
+              <h3>WordPress Developer at OneKlick Digital Co.</h3>
+              <p>June 2023 - Present</p>
               <ul>
-                <li>WordPress</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
+                <li>
+                  Developed user-friendly and attractive websites that converts.
+                </li>
               </ul>
-            </section>
-            <section id="education">
-              <h2>Education</h2>
+              <h3>Marketing Intern at Marksman Advertisement</h3>
+              <p>2022</p>
               <ul>
-                <li>Intermediate in Pre Engineering - Govt. National College, 2020 -
-                    2022</li>
-                </ul>
-              <ul>
-                <li>Digital Marketing Course - Aamir Ahmer Academy, 2022</li>
-                </ul>
-            </section>
-          </div>
-          <div id="Second_column">
-            <section id="about_me">
-                <h2>About Me</h2>
-                  <p>
-                    Highly skilled and motivated Web Developer with
-                    expertise in WordPress and Shopify seeking a
-                    challenging position to utilize my technical skills and
-                    creativity to develop visually stunning and functional
-                    websites.
-                  </p>
-              </section>
-            <section id="work-experience">
-                <h2>Work Experience</h2>
-                <div class="job">
-                  <h3>WordPress Developer at OneKlick Digital Co.</h3>
-                  <p>June 2023 - Present</p>
-                  <ul>
-                    <li>Developed user-friendly and attractive websites that converts.</li>
-                  </ul>
-                  <h3>Marketing Intern at Marksman Advertisement</h3>
-                  <p>2022</p>
-                  <ul>
-                    <li>Assisted in creating and managing content calendars & Marketing Strategies.</li>
-                  </ul>
-                </div>
-              </section>
-          </div>
+                <li>
+                  Assisted in creating and managing content calendars &
+                  Marketing Strategies.
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
+    <div id = "resume_builder">
+      <form id="resume_form">
+      <h2>Build Your Resume!</h2>
+      <h3>Personal Details</h3>
+      <div id="personal_details">
+      <label for="fullName">Name:</label>
+      <input type="text" id="fullName" name="fullName" required />
+
+      <label for="jobTitle">Job Title:</label>
+      <input type="text" id="job_title" name="jobTitle" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" required />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required />
+      </div>
+
+      <div id="education_section">
+        <h3>Education</h3>
+        <div class="education-entry">
+          <label>Degree:</label>
+          <input type="text" name="degree" required />
+
+          <label>Institution:</label>
+          <input type="text" name="institution" required />
+
+          <label>Duration:</label>
+          <input type="text" name="duration" required />
+
+          <button type="button" class="remove-education">Remove</button>
+        </div>
+        <button type="button" id="addEducation">Add Education</button>
+      </div>
+
+      <div id="work_section">
+        <h3>Work Experience</h3>
+        <div class="work-entry">
+          <label>Job Title:</label>
+          <input type="text" name="jobTitle" required />
+
+          <label>Company:</label>
+          <input type="text" name="company" required />
+
+          <label>Duration:</label>
+          <input type="text" name="duration" required />
+
+          <label>Responsibilities:</label>
+          <textarea name="responsibilities" required></textarea>
+
+          <button type="button" class="remove-work">Remove</button>
+        </div>
+        <button type="button" id="addWork">Add Work Experience</button>
+      </div>
+
+      <div id="skills_section">
+        <h3>Skills</h3>
+        <input
+          type="text"
+          id="skills_Input"
+          placeholder="Enter skills separated by commas"
+          required
+        />
+      </div>
+      <div id="about_section">
+        <label for="aboutMe">About Me:</label>
+      <textarea id="about_Input" name="aboutMe" required></textarea>
+      </div>
+      
+      <button id="generate_btn" type="submit">Generate Resume</button>
+    </form>
+  </div>
+
   </body>
 
   <script src="resume_script.js"></script>

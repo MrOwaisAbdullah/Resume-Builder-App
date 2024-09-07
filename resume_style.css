@@ -1,132 +1,226 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    position: relative;  
-    background-color: #C8CDFA;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #c8cdfa;
 }
 
-#resume{
-    width: 60vw;
-    background-color: #f0f0fe;
-    justify-content: center;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    font-size: 1.2vw;
+#resume {
+  width: 60vw;
+  background-color: #f0f0fe;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  font-size: 1.2vw;
+  margin-top: 60px;
 }
-
 
 header {
-    background-color: #4c58afda;
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    
+  background-color: #4c58afda;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
-#profile img{
-    width: 18vw;
-    border-radius: 50%;
-    position: absolute;
-    top: 10vw;
-    left: 5vw;
-    transform: translate(-50%, -50%);
+#profile img {
+  width: 18vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 10vw;
+  left: 5vw;
+  transform: translate(-50%, -50%);
 }
 
-#name{
-    color: #eae9e9eb;
-    text-align: left;
-    padding-top: 5vw;
-    font-size: 1.5vw;
-    line-height: 15px;
+#name {
+  color: #eae9e9eb;
+  text-align: left;
+  padding-top: 5vw;
+  font-size: 1.5vw;
+  line-height: 15px;
 }
 
-#name h1{
-    color: #020412;
+#name h1 {
+  color: #020412;
 }
 
-#wrapper{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+#wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-#First_column, #Second_column{
-    display: grid;
-    grid-template-columns: 1fr ;
-    gap: 20px;
+#First_column,
+#Second_column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-#First_column{
-    grid-column: 1;
+#First_column {
+  grid-column: 1;
 }
 
-#Second_column{
-    grid-column: 2;
-} 
+#Second_column {
+  grid-column: 2;
+}
 div {
-    position: relative;
-    margin: 20px 0;
-    padding: 20px;
+  position: relative;
+  margin: 20px 0;
+  padding: 20px;
 }
 
-h1, h2 {
-    color: #020412;
+h1,
+h2 {
+  color: #020412;
 }
 
 ul {
-    list-style-type: square;
-    padding: 0;
+  list-style-type: square;
+  padding: 0;
 }
 
 #skills ul li {
-    width: 80%;
-    background: #ffff;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+  width: 80%;
+  background: #ffff;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+div {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+#resume_form {
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: all ease 1s;
+  z-index: 999;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+}
+
+#resume_form h2 {
+  text-align: center;
+  color: #4c58af;
+}
+
+#resume_form input,
+#resume_form textarea {
+  width: 98%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  justify-content: center;
+}
+.education-entry,
+.work-entry,
+#personal_details {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+
+#resume_form .work-entry button, .education-entry button {
+  padding: 16px 40px;
+  background-color: #e35252;
+  display: flex;
+  justify-content: start;
+  
+}
+
+#resume_form .work-entry button:hover, .education-entry button:hover{
+  background-color: #ba2020;
+}
+
+#resume_form button {
+  padding: 16px 40px;
+  background-color: #4c58af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+}
+
+
+
+#resume_form button:hover {
+  background-color: #3b4691;
+}
+
+#toggle-btn {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #4c58af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#toggle-btn:hover {
+  background-color: #3b4691;
 }
 
 @media (max-width: 800px) {
-    #resume{
-        width: 90vw;
-        font-size: 2vw;
-    }
-    
-    #profile img{
-        width: 18vw;
-        top: 15vw;
-        left: 10vw;
-    }
-    
-    #name{
-        padding-top: 5vw;
-        font-size: 2vw;
-    }
-    div {
-        margin: 1 5px 0;
-        padding: 5px;
-    }
+  #resume{
+      width: 90vw;
+      font-size: 2vw;
+  }
+  
+  #profile img{
+      width: 18vw;
+      top: 15vw;
+      left: 10vw;
+  }
+  
+  #name{
+      padding-top: 5vw;
+      font-size: 2vw;
+  }
+  div {
+      margin: 1 5px 0;
+      padding: 5px;
+  }
 }
 
 @media (max-width: 600px) {
-    #resume{
-        width: 95vw;
-        font-size: 2vw;
-    }
-    
-    header{
-        width: 100%;
-    }
+  #resume{
+      width: 95vw;
+      font-size: 2vw;
+  }
+  
+  header{
+      width: 100%;
+  }
 
-    #profile img{
-        width: 25vw;
-        top: 14vw;
-        left: 10vw;
-    }
-    
-    #name{
-        padding-top: 2vw;
-        font-size: 2.5vw;
-    }
+  #profile img{
+      width: 25vw;
+      top: 14vw;
+      left: 10vw;
+  }
+  
+  #name{
+      padding-top: 2vw;
+      font-size: 2.5vw;
+  }
 }
