@@ -112,13 +112,18 @@ ul {
     }
     
     #profile img{
-        width: 24vw;
+        width: 25vw;
         top: 14vw;
         left: 10vw;
     }
     
     #name{
         padding-top: 2vw;
-        font-size: 2vw;
+        font-size: 2.5vw;
+    }
+
+    #First_column, #Second_column{
+        padding-top: 10px;
+        gap: 10px;
     }
 }
