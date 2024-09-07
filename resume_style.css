@@ -13,6 +13,7 @@ body {
     padding: 0;
     left: 50%;
     transform: translate(-50%);
+    font-size: 1.2vw;
 }
 
 
@@ -28,17 +29,16 @@ header {
     width: 18vw;
     border-radius: 50%;
     position: absolute;
-    top: 160px;
-    left: 100px;
+    top: 10vw;
+    left: 5vw;
     transform: translate(-50%, -50%);
 }
 
 #name{
     color: #eae9e9eb;
     text-align: left;
-    padding-top: 50px;
+    padding-top: 5vw;
     font-size: 1.5vw;
-    justify-content: right;
     line-height: 15px;
 }
 
@@ -87,8 +87,38 @@ ul {
     border-radius: 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     #resume{
         width: 90vw;
+        font-size: 2vw;
+    }
+    
+    #profile img{
+        width: 18vw;
+        top: 15vw;
+        left: 10vw;
+    }
+    
+    #name{
+        padding-top: 5vw;
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 600px) {
+    #resume{
+        width: 95vw;
+        font-size: 2vw;
+    }
+    
+    #profile img{
+        width: 24vw;
+        top: 14vw;
+        left: 10vw;
+    }
+    
+    #name{
+        padding-top: 2vw;
+        font-size: 2vw;
     }
 }
