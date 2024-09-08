@@ -7,6 +7,7 @@ toggleButton.addEventListener("click", function () {
     if (flag === 0) {
         resume.style.display = "none";
         resumeForm.style.display = "block";
+        toggleButton.style.top = "1%";
         toggleButton.textContent = "Go Back!";
         flag = 1;
     }
