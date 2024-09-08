@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <input type="text" name="institution" required />
     <label>Duration:</label>
     <input type="text" name="duration" required />
-    <button type="button" class="remove-education">Remove</button>
+    <button type="button" class="remove">Remove</button>
   `;
     educationSection.insertBefore(
       newEntry,
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <input type="text" name="duration" required />
     <label>Responsibilities:</label>
     <textarea name="responsibilities" required></textarea>
-    <button type="button" class="remove-work">Remove</button>
+    <button type="button" class="remove">Remove</button>
   `;
     workSection.insertBefore(newEntry, document.getElementById("addWork"));
   }
