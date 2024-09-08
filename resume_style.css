@@ -24,6 +24,8 @@ header {
   display: flex;
   width: 100%;
   justify-content: space-around;
+  padding: 0px;
+  margin: auto;
 }
 
 #profile-picture {
@@ -72,6 +74,11 @@ div {
   padding: 20px;
 }
 
+#experience-section h2{
+  margin-top: 20%;
+  padding-bottom: 0;
+}
+
 h1,
 h2 {
   color: #020412;
@@ -100,6 +107,7 @@ div {
   width: 65%;
   display: flex;
   margin: auto;
+  margin-top: 20px;
 }
 
 #resume-form {
@@ -176,7 +184,7 @@ div {
 }
 
 #submit-resume-btn {
-  padding: 20px 60px;
+  padding: 2vh 6vw;
   background-color: #4c58af;
   color: white;
   border: none;
@@ -195,7 +203,7 @@ div {
   top: -4%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
+  padding: 2vh 5vw;
   background-color: #4c58af;
   color: white;
   border: none;
@@ -219,6 +227,10 @@ div {
     width: 18vw;
     top: 15vw;
     left: 10vw;
+  }
+
+  #toggle-form-btn {
+    top: -3%;
   }
 
   #name-section {
@@ -296,6 +308,6 @@ div {
 
   #toggle-form-btn {
     padding: 8px 20px;
-    top: -4%;
+    top: -5%;
   }
 }
