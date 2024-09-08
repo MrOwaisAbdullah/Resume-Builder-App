@@ -21,7 +21,6 @@ toggleButton.addEventListener("click", function () {
     if (flag === 0) {
         resume.style.display = "none";
         resumeForm.style.display = "block";
-        // toggleButton.style.top = "-280%";
         toggleButton.style.marginTop = "0";
         toggleButton.textContent = "Go Back!";
         toggleButton.style.removeProperty("bottom");
