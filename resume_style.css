@@ -96,6 +96,12 @@ div {
   padding: 20px;
 }
 
+#resume-builder{
+  width: 65%;
+  display: flex;
+  margin: auto;
+}
+
 #resume-form {
   margin: auto;
   margin-top: 20px;
@@ -223,6 +229,10 @@ div {
     margin: 1 5px 0;
     padding: 5px;
   }
+  #resume-builder{
+    width: 80%;
+  }
+  
 }
 
 @media (max-width: 600px) {
@@ -246,6 +256,11 @@ div {
     padding-top: 2vw;
     font-size: 3vw;
   }
+
+  #resume-builder{
+    width: 95%;
+  }
+  
   #resume-form {
     margin: 5px;
     margin-top: 15px;
