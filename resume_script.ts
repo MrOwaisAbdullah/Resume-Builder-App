@@ -12,17 +12,28 @@ toggleButton.addEventListener("click", function () {
   if (flag === 0) {
     resume.style.display = "none";
     resumeForm.style.display = "block";
-    toggleButton.style.top = "1%";
+    toggleButton.style.top = "-60%";
     toggleButton.textContent = "Go Back!";
+    toggleButton.style.removeProperty('bottom');
+    scrollToTop()
     flag = 1;
   } else {
     resume.style.display = "block";
     resumeForm.style.display = "none";
-    toggleButton.style.top = "-4%";
+    toggleButton.style.bottom = "3%";
     toggleButton.textContent = "Build Your Resume!";
+    toggleButton.style.removeProperty('top');
+    scrollToTop()
     flag = 0;
   }
 });
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("resume-form") as HTMLFormElement;
@@ -201,5 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     buildResume();
     toggleButton.click();
+    toggleButton.style.display= "none";
   });
 });
