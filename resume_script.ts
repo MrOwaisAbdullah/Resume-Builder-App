@@ -19,7 +19,7 @@ toggleButton.addEventListener("click", function () {
     resume.style.display = "block";
     resumeForm.style.display = "none";
     toggleButton.style.top = "-4%";
-    toggleButton.textContent = "Generate Your Resume!";
+    toggleButton.textContent = "Build Your Resume!";
     flag = 0;
   }
 });
