@@ -14,6 +14,7 @@ toggleButton.addEventListener("click", function () {
     else {
         resume.style.display = "block";
         resumeForm.style.display = "none";
+        toggleButton.style.top = "-4%";
         toggleButton.textContent = "Generate Your Resume!";
         flag = 0;
     }

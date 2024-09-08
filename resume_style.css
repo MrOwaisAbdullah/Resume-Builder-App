@@ -101,6 +101,7 @@ div {
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #ffffff;
+  border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transition: all ease 1s;
   z-index: 999;
@@ -163,6 +164,11 @@ div {
   background-color: #21802f;
 }
 
+#profilePic{
+  border: none;
+  margin: 10px;
+}
+
 #submit-resume-btn {
   padding: 20px 60px;
   background-color: #4c58af;
@@ -180,7 +186,7 @@ div {
 
 #toggle-form-btn {
   position: absolute;
-  top: -50px;
+  top: -4%;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -211,7 +217,7 @@ div {
 
   #name-section {
     padding-top: 5vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
   div {
     margin: 1 5px 0;
@@ -219,7 +225,7 @@ div {
   }
   #resume-form {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 05px;
     margin-bottom: 20px;
     background-color: #ffffff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -333,7 +339,7 @@ div {
   #resume-form {
     margin: 5px;
     margin-top: 15px;
-    padding: 15px;
+    padding: 5px 10px;
   }
 
   #resume-form input,
