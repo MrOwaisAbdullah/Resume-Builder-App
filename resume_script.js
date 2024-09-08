@@ -119,12 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .getElementById("addEducation")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", addEducationEntry);
     (_b = document.getElementById("addWork")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", addWorkEntry);
     resumeForm.addEventListener("click", function (event) {
-        var _a, _b;
-        if (event.target.classList.contains("remove-education")) {
+        var _a;
+        if (event.target.classList.contains("remove")) {
             (_a = event.target.parentElement) === null || _a === void 0 ? void 0 : _a.remove();
-        }
-        if (event.target.classList.contains("remove-work")) {
-            (_b = event.target.parentElement) === null || _b === void 0 ? void 0 : _b.remove();
         }
     });
     form.addEventListener("submit", function (event) {

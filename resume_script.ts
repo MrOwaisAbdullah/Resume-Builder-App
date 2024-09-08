@@ -200,10 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("addWork")?.addEventListener("click", addWorkEntry);
 
   resumeForm.addEventListener("click", (event) => {
-    if ((event.target as HTMLElement).classList.contains("remove-education")) {
-      (event.target as HTMLElement).parentElement?.remove();
-    }
-    if ((event.target as HTMLElement).classList.contains("remove-work")) {
+    if ((event.target as HTMLElement).classList.contains("remove")) {
       (event.target as HTMLElement).parentElement?.remove();
     }
   });
