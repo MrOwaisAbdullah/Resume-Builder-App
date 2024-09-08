@@ -229,10 +229,6 @@ div {
     left: 10vw;
   }
 
-  #toggle-form-btn {
-    top: -3%;
-  }
-
   #name-section {
     padding-top: 5vw;
     font-size: 1.5vw;
@@ -309,6 +305,5 @@ div {
 
   #toggle-form-btn {
     padding: 8px 20px;
-    top: -5%;
   }
 }
