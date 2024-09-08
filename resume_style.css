@@ -194,6 +194,7 @@ div {
   cursor: pointer;
   margin: auto;
   display: flex;
+  margin-bottom: 2vh ;
 }
 
 #submit-resume-btn:hover {
