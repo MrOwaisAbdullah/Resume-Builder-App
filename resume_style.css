@@ -124,14 +124,13 @@ div {
   justify-content: center;
 }
 .education-entry,
-.work-entry{
+.work-entry {
   border: 1px solid #ddd;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 5px;
   background-color: #f9f9f9;
 }
-
 
 .remove {
   padding: 10px 40px;
@@ -143,15 +142,25 @@ div {
   cursor: pointer;
 }
 
-#addWork, #addEducation {
-  background-color: #3AAA4B;
-  padding: 15px ;
+.remove:hover {
+  background-color: #a92b2b;
+}
+
+#addWork,
+#addEducation {
+  background-color: #3aaa4b;
+  padding: 15px;
   margin: auto;
   display: flex;
   border-radius: 5px;
   border: none;
   color: #fff;
   cursor: pointer;
+}
+
+#addWork:hover,
+#addEducation:hover {
+  background-color: #21802f;
 }
 
 #submit-resume-btn {
@@ -164,8 +173,6 @@ div {
   margin: auto;
   display: flex;
 }
-
-
 
 #submit-resume-btn:hover {
   background-color: #3b4691;
@@ -190,178 +197,174 @@ div {
 }
 
 @media (max-width: 800px) {
-  #resume-container{
-      width: 90vw;
-      font-size: 2vw;
-      padding: 10px;
-  }
-  
-  #profile-picture{
-      width: 18vw;
-      top: 15vw;
-      left: 10vw;
-  }
-  
-  #name-section{
-      padding-top: 5vw;
-      font-size: 2vw;
-  }
-  div {
-      margin: 1 5px 0;
-      padding: 5px;
-  }
-  #resume-form {
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transition: all ease 1s;
-  z-index: 999;
-  padding: 20px;
-  display: none;
-  flex-direction: column;
-}
-
-#resume-form h2 {
-  text-align: center;
-  color: #4c58af;
-}
-
-#resume-form input,
-#resume-form textarea {
-  width: 98%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  justify-content: center;
-}
-.education-entry,
-.work-entry{
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-
-.remove {
-  padding: 10px 40px;
-  background-color: #e35252;
-  display: flex;
-  justify-content: start;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#addWork, #addEducation {
-  background-color: #3AAA4B;
-  padding: 15px ;
-  margin: auto;
-  display: flex;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
-#submit-resume-btn {
-  padding: 20px 60px;
-  background-color: #4c58af;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: auto;
-  display: flex;
-}
-
-
-
-#submit-resume-btn:hover {
-  background-color: #3b4691;
-}
-
-#toggle-form-btn {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  background-color: #4c58af;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-#toggle-form-btn:hover {
-  background-color: #3b4691;
-}
-}
-
-@media (max-width: 600px) {
-  #resume-container{
-      width: 95vw;
-      font-size: 2vw;
-      padding: 10px;
-  }
-  
-  header{
-      width: 100%;
-  }
-
-  #profile-picture{
-      width: 25vw;
-      top: 14vw;
-      left: 10vw;
-  }
-  
-  #name-section{
-      padding-top: 2vw;
-      font-size: 3vw;
-  }
-  #resume-form {
-    margin: 5px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    padding: 15px;
-  }
-  
-  #resume-form input,
-  #resume-form textarea {
-    width: 93%;
+  #resume-container {
+    width: 90vw;
+    font-size: 2vw;
     padding: 10px;
   }
+
+  #profile-picture {
+    width: 18vw;
+    top: 15vw;
+    left: 10vw;
+  }
+
+  #name-section {
+    padding-top: 5vw;
+    font-size: 2vw;
+  }
+  div {
+    margin: 1 5px 0;
+    padding: 5px;
+  }
+  #resume-form {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: all ease 4s;
+    z-index: 999;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+  }
+
+  #resume-form h2 {
+    text-align: center;
+    color: #4c58af;
+  }
+
+  #resume-form input,
+  #resume-form textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    justify-content: center;
+  }
   .education-entry,
-  .work-entry{
+  .work-entry {
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: #f9f9f9;
   }
-  
-  
+
   .remove {
-    padding: 8px 15px;
+    padding: 10px 40px;
+    background-color: #e35252;
+    display: flex;
+    justify-content: start;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
-  
-  #addWork, #addEducation {
-    padding: 10px ;
+
+  #addWork,
+  #addEducation {
+    background-color: #3aaa4b;
+    padding: 15px;
+    margin: auto;
+    display: flex;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
   }
-  
+
+  #submit-resume-btn {
+    padding: 20px 60px;
+    background-color: #4c58af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+  }
+
+  #submit-resume-btn:hover {
+    background-color: #3b4691;
+  }
+
+  #toggle-form-btn {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #4c58af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  #toggle-form-btn:hover {
+    background-color: #3b4691;
+  }
+}
+
+@media (max-width: 600px) {
+  #resume-container {
+    width: 95vw;
+    font-size: 2vw;
+    padding: 10px;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  #profile-picture {
+    width: 25vw;
+    top: 14vw;
+    left: 10vw;
+  }
+
+  #name-section {
+    padding-top: 2vw;
+    font-size: 3vw;
+  }
+  #resume-form {
+    margin: 5px;
+    margin-top: 15px;
+    padding: 15px;
+  }
+
+  #resume-form input,
+  #resume-form textarea {
+    width: 93%;
+    padding: 10px;
+  }
+  .education-entry,
+  .work-entry {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .remove {
+    padding: 6px 12px;
+  }
+
+  #addWork,
+  #addEducation {
+    padding: 10px;
+  }
+
   #submit-resume-btn {
     padding: 10px 40px;
   }
-  
+
   #toggle-form-btn {
     padding: 8px 20px;
     top: -5%;
   }
-  
 }

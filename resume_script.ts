@@ -25,8 +25,12 @@ toggleButton.addEventListener("click", function () {
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("resume-form") as HTMLFormElement;
-  const profilePicInput = document.getElementById("profilePic") as HTMLInputElement;
-  const profilePicPreview = document.getElementById("profile-picture") as HTMLImageElement;
+  const profilePicInput = document.getElementById(
+    "profilePic"
+  ) as HTMLInputElement;
+  const profilePicPreview = document.getElementById(
+    "profile-picture"
+  ) as HTMLImageElement;
 
   function buildResume() {
     const fullName = (document.getElementById("fullName") as HTMLInputElement)
@@ -81,14 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .split(",")
       .map((skill) => skill.trim());
 
-      const profilePicFile = profilePicInput.files?.[0];
-      if (profilePicFile) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          profilePicPreview.src = e.target?.result as string;
-        };
-        reader.readAsDataURL(profilePicFile);
-      }
+    const profilePicFile = profilePicInput.files?.[0];
+    if (profilePicFile) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        profilePicPreview.src = e.target?.result as string;
+      };
+      reader.readAsDataURL(profilePicFile);
+    }
 
     (document.getElementById("user-full-name") as HTMLElement).innerText =
       fullName;
