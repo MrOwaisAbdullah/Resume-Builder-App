@@ -6,7 +6,7 @@ body {
   background-color: #c8cdfa;
 }
 
-#resume {
+#resume-container {
   width: 60vw;
   background-color: #f0f0fe;
   justify-content: center;
@@ -16,6 +16,7 @@ body {
   transform: translate(-50%);
   font-size: 1.2vw;
   margin-top: 60px;
+  padding: 0;
 }
 
 header {
@@ -25,7 +26,7 @@ header {
   justify-content: space-around;
 }
 
-#profile img {
+#profile-picture {
   width: 18vw;
   border-radius: 50%;
   position: absolute;
@@ -34,7 +35,7 @@ header {
   transform: translate(-50%, -50%);
 }
 
-#name {
+#name-section {
   color: #eae9e9eb;
   text-align: left;
   padding-top: 5vw;
@@ -46,23 +47,23 @@ header {
   color: #020412;
 }
 
-#wrapper {
+#resume-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-#First_column,
-#Second_column {
+#left_column,
+#right_column {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
-#First_column {
+#left_column {
   grid-column: 1;
 }
 
-#Second_column {
+#right_column {
   grid-column: 2;
 }
 div {
@@ -81,7 +82,7 @@ ul {
   padding: 0;
 }
 
-#skills ul li {
+#user-skills ul li {
   width: 80%;
   background: #ffff;
   margin: 5px 0;
@@ -95,8 +96,7 @@ div {
   padding: 20px;
 }
 
-#resume_form {
-  justify-content: center;
+#resume-form {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -109,13 +109,13 @@ div {
   flex-direction: column;
 }
 
-#resume_form h2 {
+#resume-form h2 {
   text-align: center;
   color: #4c58af;
 }
 
-#resume_form input,
-#resume_form textarea {
+#resume-form input,
+#resume-form textarea {
   width: 98%;
   padding: 10px;
   margin-bottom: 15px;
@@ -124,8 +124,7 @@ div {
   justify-content: center;
 }
 .education-entry,
-.work-entry,
-#personal_details {
+.work-entry{
   border: 1px solid #ddd;
   padding: 15px;
   margin-bottom: 10px;
@@ -134,7 +133,7 @@ div {
 }
 
 
-#resume_form .work-entry button, .education-entry button {
+#resume-form .work-entry button, .education-entry button {
   padding: 16px 40px;
   background-color: #e35252;
   display: flex;
@@ -142,11 +141,11 @@ div {
   
 }
 
-#resume_form .work-entry button:hover, .education-entry button:hover{
+#resume-form .work-entry button:hover, .education-entry button:hover{
   background-color: #ba2020;
 }
 
-#resume_form button {
+#submit-resume-btn {
   padding: 16px 40px;
   background-color: #4c58af;
   color: white;
@@ -159,11 +158,11 @@ div {
 
 
 
-#resume_form button:hover {
+#submit-resume-btn:hover {
   background-color: #3b4691;
 }
 
-#toggle-btn {
+#toggle-form-btn {
   position: absolute;
   top: -50px;
   left: 50%;
@@ -177,23 +176,24 @@ div {
   z-index: 1000;
 }
 
-#toggle-btn:hover {
+#toggle-form-btn:hover {
   background-color: #3b4691;
 }
 
 @media (max-width: 800px) {
-  #resume{
+  #resume-container{
       width: 90vw;
       font-size: 2vw;
+      padding: 10px;
   }
   
-  #profile img{
+  #profile-picture{
       width: 18vw;
       top: 15vw;
       left: 10vw;
   }
   
-  #name{
+  #name-section{
       padding-top: 5vw;
       font-size: 2vw;
   }
@@ -204,22 +204,23 @@ div {
 }
 
 @media (max-width: 600px) {
-  #resume{
+  #resume-container{
       width: 95vw;
       font-size: 2vw;
+      padding: 10px;
   }
   
   header{
       width: 100%;
   }
 
-  #profile img{
+  #profile-picture{
       width: 25vw;
       top: 14vw;
       left: 10vw;
   }
   
-  #name{
+  #name-section{
       padding-top: 2vw;
       font-size: 2.5vw;
   }

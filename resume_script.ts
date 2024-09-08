@@ -1,150 +1,199 @@
-const toggleButton = document.getElementById('toggle-btn') as HTMLButtonElement;
-const resume = document.getElementById('resume') as HTMLDivElement;
-const resumeForm = document.getElementById('resume_form') as HTMLDivElement;
+const toggleButton = document.getElementById(
+  "toggle-form-btn"
+) as HTMLButtonElement;
+const resume = document.getElementById("resume-container") as HTMLDivElement;
+const resumeForm = document.getElementById("resume-form") as HTMLDivElement;
+const submitButton = document.getElementById(
+  "submit-resume-btn"
+) as HTMLButtonElement;
 
 let flag = 0;
-  toggleButton.addEventListener("click", function(){
-    if (flag == 0){
-      resume.style.display = "none";
-      resumeForm.style.display = "block";
-      toggleButton.textContent = "Go Back!";
-      toggleButton.style.top = "1%"
-      flag = 1;
-    }
-    else{
-      resume.style.display = "block";
-      resumeForm.style.display = "none";
-      toggleButton.textContent = "Build your resume!";
-      flag = 0;
-    }
+toggleButton.addEventListener("click", function () {
+  if (flag === 0) {
+    resume.style.display = "none";
+    resumeForm.style.display = "block";
+    toggleButton.textContent = "Go Back!";
+    flag = 1;
+  } else {
+    resume.style.display = "block";
+    resumeForm.style.display = "none";
+    toggleButton.textContent = "Generate Your Resume!";
+    flag = 0;
   }
-)
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('resume_form') as HTMLFormElement;
-    const displayName = document.getElementById('fullName') as HTMLElement;
-    const displayJobTitle = document.getElementById('job_title') as HTMLElement;
-    const displayEmail = document.getElementById('email') as HTMLElement;
-    const displayPhone = document.getElementById('phone') as HTMLElement;
-    const displayLocation = document.getElementById('location') as HTMLElement;
-    const displayEducation = document.getElementById('education_section') as HTMLElement;
-    const displaySkills = document.getElementById('skills_section') as HTMLElement;
-    const displayExperience = document.getElementById('work_section') as HTMLElement;
-    const displayAboutMe = document.getElementById('about_section') as HTMLElement;
-  
-    const educationSection = document.getElementById('education_section') as HTMLElement;
-    const addEducationBtn = document.getElementById('addEducation') as HTMLButtonElement;
-  
-    addEducationBtn.addEventListener('click', () => {
-      const educationEntry = document.createElement('div');
-      educationEntry.className = 'education-entry';
-      educationEntry.innerHTML = `
-        <label>Degree:</label>
-        <input type="text" name="degree" required />
-  
-        <label>Institution:</label>
-        <input type="text" name="institution" required />
-  
-        <label>Duration:</label>
-        <input type="text" name="duration" required />
-  
-        <button type="button" class="remove-education">Remove</button>
-      `;
-      educationSection.insertBefore(educationEntry, addEducationBtn);
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("resume-form") as HTMLFormElement;
+  const profilePicInput = document.getElementById("profilePic") as HTMLInputElement;
+  const profilePicPreview = document.getElementById("profile-picture") as HTMLImageElement;
+
+  function buildResume() {
+    const fullName = (document.getElementById("fullName") as HTMLInputElement)
+      .value;
+    const jobTitle = (document.getElementById("jobTitle") as HTMLInputElement)
+      .value;
+    const email = (document.getElementById("email") as HTMLInputElement).value;
+    const phone = (document.getElementById("phone") as HTMLInputElement).value;
+    const location = (document.getElementById("location") as HTMLInputElement)
+      .value;
+    const aboutMe = (document.getElementById("aboutInput") as HTMLInputElement)
+      .value;
+
+    const educationEntries = document.querySelectorAll(".education-entry");
+    let educationData: any[] = [];
+    educationEntries.forEach((entry) => {
+      const degree = (
+        entry.querySelector('input[name="degree"]') as HTMLInputElement
+      ).value;
+      const institution = (
+        entry.querySelector('input[name="institution"]') as HTMLInputElement
+      ).value;
+      const duration = (
+        entry.querySelector('input[name="duration"]') as HTMLInputElement
+      ).value;
+      educationData.push({ degree, institution, duration });
     });
-  
-    educationSection.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).classList.contains('remove-education')) {
-        const entry = (e.target as HTMLElement).parentElement;
-        if (entry) {
-          educationSection.removeChild(entry);
-        }
+
+    const workEntries = document.querySelectorAll(".work-entry");
+    let workData: any[] = [];
+    workEntries.forEach((entry) => {
+      const jobTitle = (
+        entry.querySelector('input[name="jobTitle"]') as HTMLInputElement
+      ).value;
+      const company = (
+        entry.querySelector('input[name="company"]') as HTMLInputElement
+      ).value;
+      const duration = (
+        entry.querySelector('input[name="duration"]') as HTMLInputElement
+      ).value;
+      const responsibilities = (
+        entry.querySelector(
+          'textarea[name="responsibilities"]'
+        ) as HTMLTextAreaElement
+      ).value;
+      workData.push({ jobTitle, company, duration, responsibilities });
+    });
+
+    const skills = (
+      document.getElementById("skills_Input") as HTMLInputElement
+    ).value
+      .split(",")
+      .map((skill) => skill.trim());
+
+      const profilePicFile = profilePicInput.files?.[0];
+      if (profilePicFile) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          profilePicPreview.src = e.target?.result as string;
+        };
+        reader.readAsDataURL(profilePicFile);
       }
-    });
-  
-    const workExperienceSection = document.getElementById('work_section') as HTMLElement;
-    const addWorkBtn = document.getElementById('addWork') as HTMLButtonElement;
-  
-    addWorkBtn.addEventListener('click', () => {
-      const workEntry = document.createElement('div');
-      workEntry.className = 'work-entry';
-      workEntry.innerHTML = `
-        <label>Job Title:</label>
-        <input type="text" name="jobTitle" required />
-  
-        <label>Company:</label>
-        <input type="text" name="company" required />
-  
-        <label>Duration:</label>
-        <input type="text" name="duration" required />
-  
-        <label>Responsibilities:</label>
-        <textarea name="responsibilities" required></textarea>
-  
-        <button type="button" class="remove-work">Remove</button>
-      `;
-      workExperienceSection.insertBefore(workEntry, addWorkBtn);
-    });
-  
-    workExperienceSection.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).classList.contains('remove-work')) {
-        const entry = (e.target as HTMLElement).parentElement;
-        if (entry) {
-          workExperienceSection.removeChild(entry);
-        }
-      }
-    });
-  
-    form.addEventListener('submit', (event) => {
-      event.preventDefault(); 
-  
-      const fullName = (document.getElementById('full_name') as HTMLInputElement).value;
-      const jobTitle = (document.getElementById('job_title') as HTMLInputElement).value;
-      const email = (document.getElementById('email') as HTMLInputElement).value;
-      const phone = (document.getElementById('phone') as HTMLInputElement).value;
-      const location = (document.getElementById('location') as HTMLInputElement).value;
-      const aboutMe = (document.getElementById('aboutMe') as HTMLTextAreaElement).value;
-  
-      displayName.innerText = fullName;
-      displayJobTitle.innerText = jobTitle;
-      displayEmail.innerText = `Email: ${email}`;
-      displayPhone.innerText = `Phone: ${phone}`;
-      displayLocation.innerText = `Location: ${location}`;
-      displayAboutMe.innerText = aboutMe;
-  
-      const educationEntries = form.querySelectorAll('.education-entry');
-      let educationHTML = '';
-      educationEntries.forEach((entry) => {
-        const degree = (entry.querySelector('input[name="degree"]') as HTMLInputElement).value;
-        const institution = (entry.querySelector('input[name="institution"]') as HTMLInputElement).value;
-        const duration = (entry.querySelector('input[name="duration"]') as HTMLInputElement).value;
-        educationHTML += `<li>${degree} - ${institution}, ${duration}</li>`;
-      });
-      displayEducation.innerHTML = educationHTML;
-  
-      const workEntries = form.querySelectorAll('.work-entry');
-      let workHTML = '';
-      workEntries.forEach((entry) => {
-        const jobTitle = (entry.querySelector('input[name="jobTitle"]') as HTMLInputElement).value;
-        const company = (entry.querySelector('input[name="company"]') as HTMLInputElement).value;
-        const duration = (entry.querySelector('input[name="duration"]') as HTMLInputElement).value;
-        const responsibilities = (entry.querySelector('textarea[name="responsibilities"]') as HTMLTextAreaElement).value;
-  
-        const responsibilitiesList = responsibilities.split('\n').map(item => `<li>${item.trim()}</li>`).join('');
-  
-        workHTML += `
-          <div class="job">
-            <h3>${jobTitle} at ${company}</h3>
-            <p>${duration}</p>
-            <ul>${responsibilitiesList}</ul>
-          </div>
-        `;
-      });
-      displayExperience.innerHTML = workHTML;
-  
-      const skillsInput = (document.getElementById('skillsInput') as HTMLInputElement).value;
-      const skillsArray = skillsInput.split(',').map(skill => `<li>${skill.trim()}</li>`).join('');
-      displaySkills.innerHTML = skillsArray;
-    });
+
+    (document.getElementById("user-full-name") as HTMLElement).innerText =
+      fullName;
+    (document.getElementById("user-job-title") as HTMLElement).innerText =
+      jobTitle;
+    (
+      document.getElementById("user-email") as HTMLElement
+    ).innerText = `Email: ${email}`;
+    (
+      document.getElementById("user-phone") as HTMLElement
+    ).innerText = `Phone: ${phone}`;
+    (
+      document.getElementById("user-location") as HTMLElement
+    ).innerText = `Location: ${location}`;
+    (document.getElementById("user-about") as HTMLElement).innerText = aboutMe;
+
+    const educationSection = document.getElementById(
+      "education-list"
+    ) as HTMLElement;
+    educationSection.innerHTML = educationData
+      .map(
+        (edu: any) =>
+          `<li>${edu.degree} - ${edu.institution}, ${edu.duration}</li>`
+      )
+      .join("");
+
+    const workExperienceSection = document.getElementById(
+      "experience-section"
+    ) as HTMLElement;
+    workExperienceSection.innerHTML = workData
+      .map(
+        (work: any) => `
+        <h3>${work.jobTitle} at ${work.company}</h3>
+        <p>${work.duration}</p>
+        <ul>${work.responsibilities
+          .split("\n")
+          .map((resp: string) => `<li>${resp}</li>`)
+          .join("")}</ul>
+      `
+      )
+      .join("");
+
+    const skillsSection = document.getElementById("user-skills") as HTMLElement;
+    skillsSection.innerHTML = `<ul>${skills
+      .map((skill: string) => `<li>${skill}</li>`)
+      .join("")}</ul>`;
+  }
+
+  function addEducationEntry() {
+    const educationSection = document.getElementById(
+      "form-education-section"
+    ) as HTMLDivElement;
+    const newEntry = document.createElement("div");
+    newEntry.className = "education-entry";
+    newEntry.innerHTML = `
+    <label>Degree:</label>
+    <input type="text" name="degree" required />
+    <label>Institution:</label>
+    <input type="text" name="institution" required />
+    <label>Duration:</label>
+    <input type="text" name="duration" required />
+    <button type="button" class="remove-education">Remove</button>
+  `;
+    educationSection.insertBefore(
+      newEntry,
+      document.getElementById("addEducation")
+    );
+  }
+
+  function addWorkEntry() {
+    const workSection = document.getElementById(
+      "form-work-section"
+    ) as HTMLDivElement;
+    const newEntry = document.createElement("div");
+    newEntry.className = "work-entry";
+    newEntry.innerHTML = `
+    <label>Job Title:</label>
+    <input type="text" name="jobTitle" required />
+    <label>Company:</label>
+    <input type="text" name="company" required />
+    <label>Duration:</label>
+    <input type="text" name="duration" required />
+    <label>Responsibilities:</label>
+    <textarea name="responsibilities" required></textarea>
+    <button type="button" class="remove-work">Remove</button>
+  `;
+    workSection.insertBefore(newEntry, document.getElementById("addWork"));
+  }
+
+  document
+    .getElementById("addEducation")
+    ?.addEventListener("click", addEducationEntry);
+  document.getElementById("addWork")?.addEventListener("click", addWorkEntry);
+
+  resumeForm.addEventListener("click", (event) => {
+    if ((event.target as HTMLElement).classList.contains("remove-education")) {
+      (event.target as HTMLElement).parentElement?.remove();
+    }
+    if ((event.target as HTMLElement).classList.contains("remove-work")) {
+      (event.target as HTMLElement).parentElement?.remove();
+    }
   });
-  
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    buildResume();
+    toggleButton.click();
+  });
+});
