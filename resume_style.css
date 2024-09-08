@@ -4,6 +4,8 @@ body {
   padding: 0;
   position: relative;
   background-color: #c8cdfa;
+  background-image: '';
+  background-size: cover;
 }
 
 #resume-container {
@@ -19,14 +21,12 @@ body {
   padding: 0;
 }
 
-header {
+#profile-section {
   background-color: #4c58afda;
   display: grid;
   grid-template-columns: 1.5fr 2fr; 
-  width: 100%;
   justify-content: start;
-  padding: 0px;
-  margin: auto;
+  position: relative;
 }
 
 #profile-picture {
@@ -41,9 +41,9 @@ header {
 #name-section {
   color: #eae9e9eb;
   text-align: left;
-  padding-top: 5vw;
+  padding-top: 2vw;
   font-size: 1.8vw;
-  line-height: 15px;
+  line-height: 45px;
 }
 
 #name h1 {
@@ -54,6 +54,7 @@ header {
 #resume-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding: 30px;
 }
 
 #left_column,
@@ -111,6 +112,7 @@ div {
   position: relative;
   padding-top: 5%;
   margin: auto;
+  z-index: 10;
 }
 
 #resume-form {
@@ -204,7 +206,7 @@ div {
 #toggle-form-btn {
   position: absolute;
   left: 50%;
-  margin-top: 80%;
+  margin-top: 95%;
   transform: translateX(-50%);
   padding: 2vh 5vw;
   background-color: #4c58af;
@@ -213,28 +215,76 @@ div {
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
+  margin-bottom: 40px;
 }
 
 #toggle-form-btn:hover {
   background-color: #3b4691;
 }
 
-@media (max-width: 800px) {
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  padding: 5px 0;
+  font-size: 0.8em;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+@media (max-width: 1200px) {
   #resume-container {
-    width: 90vw;
-    font-size: 2vw;
-    padding: 10px;
+    width: 75vw;
+    font-size: 1.8vw;
+    padding: 0;
   }
 
   #profile-picture {
     width: 20vw;
-    top: 15vw;
+    top: 11vw;
+    left: 3.5vw;
+  }
+
+  #name-section {
+    padding-top: 5vw;
+    line-height: 2vw;
+  }
+  #resume-content{
+    padding: 35px;
+  }
+
+  div {
+    margin: 1 5px 0;
+    padding: 5px;
+  }
+  #resume-builder{
+    width: 80%;
+  }
+  
+  #toggle-form-btn {
+    padding: 8px 20px;
+    margin-top: 115%;
+  }
+}
+
+@media (max-width: 800px) {
+  #resume-container {
+    width: 90vw;
+    font-size: 2vw;
+    padding: 0;
+  }
+
+  #profile-picture {
+    width: 22vw;
+    top: 12vw;
     left: 10vw;
   }
 
   #name-section {
     padding-top: 5vw;
-    font-size: 1.5vw;
+    line-height: 2vw;
   }
   div {
     margin: 1 5px 0;
@@ -246,7 +296,7 @@ div {
   
   #toggle-form-btn {
     padding: 8px 20px;
-    margin-top: 125%;
+    margin-top: 135%;
   }
 }
 
@@ -254,15 +304,15 @@ div {
   #resume-container {
     width: 95vw;
     font-size: 2vw;
-    padding: 10px 5px;
+    padding: 0;
   }
 
-  header {
+  #profile-section {
     width: 100%;
   }
 
   #profile-picture {
-    width: 31vw;
+    width: 26vw;
     top: 14vw;
     left: 10vw;
   }
@@ -270,6 +320,10 @@ div {
   #name-section {
     padding-top: 2vw;
     font-size: 3vw;
+  }
+
+  #resume-content{
+    padding: 20px;
   }
 
   #resume-builder{
@@ -312,6 +366,6 @@ div {
 
   #toggle-form-btn {
     padding: 8px 20px;
-    margin-top: 140%;
+    margin-top: 145%;
   }
 }

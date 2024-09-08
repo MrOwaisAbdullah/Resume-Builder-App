@@ -6,24 +6,45 @@ const resumeForm = document.getElementById("resume-form") as HTMLDivElement;
 const submitButton = document.getElementById(
   "submit-resume-btn"
 ) as HTMLButtonElement;
+const body = document.getElementById("bg") as HTMLDivElement;
+const newImage = 'wave_background_4.jpg';
+
+let isBackgroundImage = false;
+
+function setBackground(){
+if (!isBackgroundImage) {
+  body.style.backgroundImage = `url(${newImage})`;
+  isBackgroundImage = true;
+} else {
+  body.style.backgroundImage = '';
+  body.style.backgroundColor = "#c8cdfa";
+  isBackgroundImage = false;
+}
+}
+
+
 
 let flag = 0;
 toggleButton.addEventListener("click", function () {
   if (flag === 0) {
     resume.style.display = "none";
     resumeForm.style.display = "block";
-    toggleButton.style.top = "-60%";
+    toggleButton.style.marginTop = "0";
     toggleButton.textContent = "Go Back!";
-    toggleButton.style.removeProperty('bottom');
-    scrollToTop()
+    toggleButton.style.removeProperty("bottom");
+    body.style.removeProperty("backgroundImage");
+    scrollToTop();
+    setBackground()
     flag = 1;
   } else {
     resume.style.display = "block";
     resumeForm.style.display = "none";
     toggleButton.style.bottom = "3%";
     toggleButton.textContent = "Build Your Resume!";
-    toggleButton.style.removeProperty('top');
-    scrollToTop()
+    toggleButton.style.removeProperty("top");
+    body.style.backgroundImage = `url(${newImage})`;
+    scrollToTop();
+    setBackground()
     flag = 0;
   }
 });
@@ -31,7 +52,7 @@ toggleButton.addEventListener("click", function () {
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 }
 
@@ -209,6 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     buildResume();
     toggleButton.click();
-    toggleButton.style.display= "none";
+    toggleButton.style.display = "none";
   });
 });

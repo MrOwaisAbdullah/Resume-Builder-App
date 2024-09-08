@@ -2,15 +2,32 @@ var toggleButton = document.getElementById("toggle-form-btn");
 var resume = document.getElementById("resume-container");
 var resumeForm = document.getElementById("resume-form");
 var submitButton = document.getElementById("submit-resume-btn");
+var body = document.getElementById("bg");
+var newImage = 'wave_background_4.jpg';
+var isBackgroundImage = false;
+function setBackground() {
+    if (!isBackgroundImage) {
+        body.style.backgroundImage = "url(".concat(newImage, ")");
+        isBackgroundImage = true;
+    }
+    else {
+        body.style.backgroundImage = '';
+        body.style.backgroundColor = "#c8cdfa";
+        isBackgroundImage = false;
+    }
+}
 var flag = 0;
 toggleButton.addEventListener("click", function () {
     if (flag === 0) {
         resume.style.display = "none";
         resumeForm.style.display = "block";
-        toggleButton.style.top = "-60%";
+        // toggleButton.style.top = "-280%";
+        toggleButton.style.marginTop = "0";
         toggleButton.textContent = "Go Back!";
-        toggleButton.style.removeProperty('bottom');
+        toggleButton.style.removeProperty("bottom");
+        body.style.removeProperty("backgroundImage");
         scrollToTop();
+        setBackground();
         flag = 1;
     }
     else {
@@ -18,15 +35,17 @@ toggleButton.addEventListener("click", function () {
         resumeForm.style.display = "none";
         toggleButton.style.bottom = "3%";
         toggleButton.textContent = "Build Your Resume!";
-        toggleButton.style.removeProperty('top');
+        toggleButton.style.removeProperty("top");
+        body.style.backgroundImage = "url(".concat(newImage, ")");
         scrollToTop();
+        setBackground();
         flag = 0;
     }
 });
 function scrollToTop() {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
     });
 }
 document.addEventListener("DOMContentLoaded", function () {
