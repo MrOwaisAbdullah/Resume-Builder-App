@@ -21,9 +21,10 @@ body {
 
 header {
   background-color: #4c58afda;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr; 
   width: 100%;
-  justify-content: space-around;
+  justify-content: start;
   padding: 0px;
   margin: auto;
 }
@@ -32,8 +33,8 @@ header {
   width: 18vw;
   border-radius: 50%;
   position: absolute;
-  top: 10vw;
-  left: 5vw;
+  margin-left: 12vw;
+  top: 8.9vw;
   transform: translate(-50%, -50%);
 }
 
@@ -47,6 +48,7 @@ header {
 
 #name h1 {
   color: #020412;
+  text-align: left;
 }
 
 #resume-content {
@@ -224,7 +226,7 @@ div {
   }
 
   #profile-picture {
-    width: 18vw;
+    width: 20vw;
     top: 15vw;
     left: 10vw;
   }
@@ -241,6 +243,10 @@ div {
     width: 80%;
   }
   
+  #toggle-form-btn {
+    padding: 8px 20px;
+    margin-top: 125%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -255,7 +261,7 @@ div {
   }
 
   #profile-picture {
-    width: 25vw;
+    width: 31vw;
     top: 14vw;
     left: 10vw;
   }
@@ -305,5 +311,6 @@ div {
 
   #toggle-form-btn {
     padding: 8px 20px;
+    margin-top: 140%;
   }
 }
