@@ -323,34 +323,19 @@ div {
   
   #name-section{
       padding-top: 2vw;
-      font-size: 2.5vw;
+      font-size: 3vw;
   }
   #resume-form {
-    margin: auto;
+    margin: 5px;
     margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transition: all ease 1s;
-    z-index: 999;
-    padding: 20px;
-    display: none;
-    flex-direction: column;
-  }
-  
-  #resume-form h2 {
-    text-align: center;
-    color: #4c58af;
+    margin-bottom: 30px;
+    padding: 15px;
   }
   
   #resume-form input,
   #resume-form textarea {
-    width: 98%;
+    width: 93%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    justify-content: center;
   }
   .education-entry,
   .work-entry{
@@ -363,13 +348,7 @@ div {
   
   
   .remove {
-    padding: 10px 40px;
-    background-color: #e35252;
-    display: flex;
-    justify-content: start;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 8px 15px;
   }
   
   #addWork, #addEducation {
@@ -377,7 +356,7 @@ div {
   }
   
   #submit-resume-btn {
-    padding: 6px 40px;
+    padding: 10px 40px;
   }
   
   #toggle-form-btn {
